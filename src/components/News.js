@@ -64,13 +64,14 @@ export default class News extends Component {
 
     render() {
         return (
-            <div className="container my-3">
+            <div className="my-3 mx-5">
                 <h1 style={{ color: 'white' }}>Top Headlines</h1>
                 {this.state.loading && <Spinner />}
                 <div className="row">
                     {!this.state.loading && this.state.articles.map((element) => {
                         return <div className="col-md-4 my-2" key={element.url}>
-                            <NewsItem title={element.title != null ? element.title.slice(0, 45) : ""} description={element.description != null ? element.description.slice(0, 100) : element.title} newsUrl={element.url} imgUrl={element.urlToImage} />
+                            <NewsItem title={element.title != null ? element.title.slice(0, 45) : ""} description={element.description != null ? element.description.slice(0, 100) : element.title} newsUrl={element.url} imgUrl={element.urlToImage} author={element.author} date={element.publishedAt}/>
+                            {/* <NewsItem title={element.title} description={element.description} newsUrl={element.url} imgUrl={element.urlToImage} author={element.author} date={element.publishedAt} /> */}
                         </div>
                     })}
 
