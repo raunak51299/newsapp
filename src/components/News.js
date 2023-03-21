@@ -70,7 +70,7 @@ const News = (props) => {
 
     return (
         <div className="my-3 mx-5">
-            <h1 style={{ color: 'white' }}>Top Headlines</h1>
+            <h1 style={{ color: 'white', marginTop: '60px' }}>Top Headlines</h1>
             {loading && <Spinner />}
             <InfiniteScroll
                 dataLength={articles.length}
