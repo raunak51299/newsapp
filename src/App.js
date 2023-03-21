@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState } from 'react'
 import Navbar from './components/NavBar';
 import News from './components/News';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import LoadingBar from 'react-top-loading-bar'
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
   const [progress, setProgress] = useState(0)
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Navbar />
         <LoadingBar
           color='#4affd5'
@@ -28,7 +28,7 @@ const App = () => {
           <Route exact path="/sports" element={<News setProgress={setProgress} apiKey={apiKey} key="sports" pageSize={10} country={"in"} category={"sports"} />} />
           <Route exact path="/technology" element={<News setProgress={setProgress} apiKey={apiKey} key="technology" pageSize={10} country={"in"} category={"technology"} />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   )
 }
